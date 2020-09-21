@@ -31,7 +31,7 @@ Pure-Python implementation of Jordan Terrell's DHCP library v0.3
 """
 import gc
 import time
-from random import randrange
+from random import randint
 from micropython import const
 import adafruit_wiznet5k.adafruit_wiznet5k_socket as socket
 from adafruit_wiznet5k.adafruit_wiznet5k_socket import htonl, htons
@@ -361,7 +361,7 @@ class DHCP:
 
         """
         # select an initial transaction id
-        self._transaction_id = randrange(1, 2000)
+        self._transaction_id = randint(1, 2000)
 
         result = 0
         msg_type = 0
